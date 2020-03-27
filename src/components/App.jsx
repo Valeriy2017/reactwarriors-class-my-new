@@ -1,5 +1,5 @@
 import React from "react";
-import moviesData from "../moviesData";
+// import moviesData from "../moviesData";
 import MovieItem from "./MovieItem";
 import { API_URL, API_KEY_3 } from "../utils/api";
 import MovieTabs from "./MovieTabs";
@@ -78,7 +78,7 @@ class App extends React.Component {
       <div className="container">
         <div className="row mt-4">
           <div className="col-9">
-            <div className="row">
+            <div className="row md-4">
               <MovieTabs
                 sort_by={this.state.sort_by}
                 updateSortBy={this.updateSortBy}

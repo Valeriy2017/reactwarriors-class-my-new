@@ -37,7 +37,7 @@ const MovieTabs = props => {
       </li>
       <li className="nav-item">
         <div
-          className={getClassActiveLink("vote_avetage")}
+          className={getClassActiveLink("vote_avetage.desc")}
           // className={`nav-link ${sort_by === "vote_avetage.desc" ? "active" : ""}`}
           onClick={handleClick("vote_avetage.desc")}
         >
