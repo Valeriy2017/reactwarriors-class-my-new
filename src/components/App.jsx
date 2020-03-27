@@ -1,6 +1,7 @@
 import React from "react";
 import { moviesData } from "../moviesData";
 import MovieItem from "./MovieItem";
+import { API_URL, API_KEY_3 } from "../utils/api";
 
 // UI = fn(state, props)
 
@@ -11,9 +12,27 @@ class App extends React.Component {
     super();
 
     this.state = {
-      movies: moviesData,
+      movies: [],
       moviesWillWatch: []
     };
+    console.log("constructor");
+  }
+
+  componentDidMount() {
+    console.log("didMount");
+    fetch(
+      `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=popularity.asc`
+    )
+      .then(response => {
+        console.log("then");
+        return response.json();
+      })
+      .then(data => {
+        console.log("data", data);
+        this.setState({
+          movies: data.results
+        });
+      });
   }
 
   deleteMovie = movie => {
@@ -47,6 +66,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log("render");
     console.log("render", this);
     return (
       <div className="container">
