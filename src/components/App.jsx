@@ -91,11 +91,15 @@ class App extends React.Component {
       <div className="container">
         <div className="row mt-4">
           <div className="col-9">
-            <div className="row md-4">
+            <div className="row mb-4">
+              <div className="col-12">
               <MovieTabs
                 sort_by={this.state.sort_by}
                 updateSortBy={this.updateSortBy}
               />
+                </div>
+              </div>
+            <div className="row">
               {this.state.movies.map(movie => {
                 return (
                   <div className="col-6 mb-4" key={movie.id}>
