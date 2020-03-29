@@ -1,7 +1,23 @@
 import React from "react";
 
-const MovieTabs = props => {
-  const { sort_by, updateSortBy } = props;
+
+class MovieTabs extends React.component{
+  componentWillReceiveProps(nextProps, nextState) {
+    console.log("willReceiveProps);
+    console.log("nextProps sort_by", nextProps.sort_by);
+    console.log("prevProps sort_by", this.props.sort_by);
+  }
+  
+  shouldComponentUpdate() {
+    if (nextProps.sort_by !== this.props.sort_by) {
+       return true;
+    } else {
+      return false;
+    }
+  }
+  
+  render() {
+     const { sort_by, updateSortBy } = props;
   // const handleClick = value => () => {
   //     updateSortBy(value);
   //   };
@@ -24,7 +40,7 @@ const MovieTabs = props => {
           onClick={handleClick("popularity.desc")}
         >
           Popularity desc
-        </div>
+</div>
       </li>
       <li className="nav-item">
         <div
@@ -46,6 +62,10 @@ const MovieTabs = props => {
       </li>
     </ul>
   );
-};
+  }
+
+}
+
+     
 
 export default MovieTabs;
