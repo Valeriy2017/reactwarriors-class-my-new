@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class MovieTabs extends React.component{
+class MovieTabs extends React.Component{
   componentWillReceiveProps(nextProps, nextState) {
     console.log("willReceiveProps");
     console.log("nextProps sort_by", nextProps.sort_by);
