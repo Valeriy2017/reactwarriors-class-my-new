@@ -3,7 +3,7 @@ import React from "react";
 
 class MovieTabs extends React.component{
   componentWillReceiveProps(nextProps, nextState) {
-    console.log("willReceiveProps);
+    console.log("willReceiveProps");
     console.log("nextProps sort_by", nextProps.sort_by);
     console.log("prevProps sort_by", this.props.sort_by);
   }
