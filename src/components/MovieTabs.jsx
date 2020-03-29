@@ -17,7 +17,7 @@ class MovieTabs extends React.component{
   }
   
   render() {
-     const { sort_by, updateSortBy } = props;
+     const { sort_by, updateSortBy } = this.props;
   // const handleClick = value => () => {
   //     updateSortBy(value);
   //   };
@@ -62,7 +62,7 @@ class MovieTabs extends React.component{
       </li>
     </ul>
   );
-  }
+ }
 
 }
 
